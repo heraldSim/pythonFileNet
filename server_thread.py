@@ -60,7 +60,7 @@ try:
 except FileExistsError:
     pass
 
-HOST = '127.0.0.1'
+HOST = '0.0.0.0'
 PORT = 9080
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
