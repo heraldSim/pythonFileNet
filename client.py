@@ -1,10 +1,19 @@
 import socket
 import os
+import argparse
 
-import buffer
+from netbuffer import buffer
 
-HOST = '127.0.0.1'
-PORT = 9000
+parser = argparse.ArgumentParser()
+parser.add_argument('ip', type=str,
+                help="ipaddress")
+
+parser.add_argument('port', type=int,
+                help="portNum")
+args = parser.parse_args()
+
+HOST = args.ip
+PORT = args.port
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.connect((HOST, PORT))
